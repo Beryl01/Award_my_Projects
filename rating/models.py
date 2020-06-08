@@ -60,3 +60,13 @@ class Rating(models.Model):
 
   def delete_rating(self):
     self.delete()
+
+class Profiles(models.Model):
+    name = models.CharField(max_length=40)
+    bio = models.TextField()
+    projects = models.CharField(max_length=70)
+    dp = models.ImageField(upload_to = 'dp/')
+
+class Projects(models.Model):
+    project_name = models.CharField(max_length=40)
+    description = models.TextField()
