@@ -1,0 +1,116 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% if title %}
+  <title>{{title}}</title>
+  {% else %}
+  <title>Rate This Sites</title>
+  {% endif %}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Dancing+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  {% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  {% endblock %}
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}">Awards</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}">
+        <input type="text" class="form-control my-2 my-sm-0 search-input" name="search" placeholder="Search projects"
+          id="search">
+      </form>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Portfolio
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="{% url 'myprojects' %}">Projects</a>
+              <a class="dropdown-item" href="{% url 'new_projects' %}">New Project</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Account
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="">Profile</a>
+              <a class="dropdown-item" href="{% url 'newedit_profile' %}">Edit Profile</a>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#modal1">Contact</a>
+            <div id="modal1" class="modal">
+              <div class="modal-content" style="text-align: center;font-size: x-large;background-color:#5d6b46;">
+                <h3>Contacts Information</h3>
+                <ul class="list">
+                  <li>
+                    Email address: carizeree@gmail.com
+                  </li>
+                  <li>
+                    Phone number: +250783706421
+                  </li>
+                  <li>
+                    Facebook: TuratsinzeIzCarine
+                  </li>
+                  <li>
+                    Address: Kigali/Rwanda
+                  </li>
+                  <li>
+                    Instagram: Carine Izere
+                  </li>
+                  <li>
+                    Twitter: CacaIzee
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+              </div>
+            </div>
+            <script>
+              $(document).ready(function () {
+                $('.modal').modal();
+              });
+            </script>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {% block content %}
+  {%endblock%}
+
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'js/jquery.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+  {% endblock %}
+</body>
+
+</html>

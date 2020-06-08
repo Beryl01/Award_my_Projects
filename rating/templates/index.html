@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<br>
+<!-- Page Content -->
+<div class="container">
+  <!-- Intro Content -->
+  <div class="row" id="head">
+    <div class="col-lg-12">
+      <h3 class="text-white" style="font-family: 'Cormorant Garamond', serif;text-align: center;">WELCOME TO THE AWARDS SITE</h3>
+      <h4 class="text-white" style="font-family: 'Dancing Script', cursive;text-align: center;">
+        Sites of the day {{date|date:"l d-F Y"}}
+      </h4>
+    </div>
+  </div>
+  <br>
+  <br>
+  <h2 style="font-family: 'Dancing Script', cursive;text-align: center;">Top Rated Projects Today</h2>
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100 text-center">
+        <img class="card-img-top" src="static/images/pic1.jpeg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Stylish Homes</h4>
+          <p class="card-text">Pink and monochrome decor is featuring far and wide on the interior design scene. Check this set of three inspirational home tours.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#">Contact: stylishhomes@stylish.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100 text-center">
+        <img class="card-img-top" src="static/images/download.jpeg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">African Tech Awards</h4>
+          <p class="card-text">The awards are open to corporates, established ventures or start-ups who have launched services in at least one African market..</p>
+        </div>
+        <div class="card-footer">
+          <a href="#">Contact: africanawards@tech.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+      <div class="card h-100 text-center">
+        <img class="card-img-top" src="static/images/pic3.jpeg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Online library</h4>
+          <p class="card-text">Online library is a site for an open Library, editable library catalog, building towards a web page for every book ever published..</p>
+        </div>
+        <div class="card-footer">
+          <a href="#">Contact: onlinelibrary@libs.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
