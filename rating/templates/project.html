@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">Portfolio Item
+  </h1>
+  <!-- Portfolio Item Row -->
+  <div class="row">
+    <div class="col-md-8">
+      <img class="img-fluid" src="{{project.image.url}}" alt="{{ project.title }}">
+    </div>
+    <div class="col-md-4">
+      <h3 class="my-3">{{project.title}}</h3>
+      <p>{{project.description}}</p>
+      <p><a target="_blank" href="{{ project.link }}"><button type="button"
+            class="btn btn-info">View_project</button></a>
+        <a href="{% url 'newrating' project.id %}"><button type="button" class="btn btn-primary">Rate now</button></a>
+        {% if ratings%}
+        <h5>Your Rates</h5>
+        {% for rating in ratings %}
+        <ul>
+          <li>Design: {{rating.design}}</li>
+          <li>Usability: {{rating.usability}}</li>
+          <li>Content: {{rating.content}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h4> No Ratings as per now.</h4>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
