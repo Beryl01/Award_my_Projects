@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <!-- Page Heading/Breadcrumbs -->
+  {% if searched_projects %}
+  <h1 class="mt-4 mb-3">Found {{ searched_projects|length }} projects for the searched term '{{message}}'
+  </h1>
+  {% else %}
+  <h1 class="mt-4 mb-3">Found {{ searched_projects|length }} projects for the searched term '{{message}}'
+  </h1>
+  {% endif %}
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="index.html">Home</a>
+    </li>
+    <li class="breadcrumb-item active">Searched Item</li>
+  </ol>
+  <div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-md-8">
+      <!-- Blog Post -->
+      {% if searched_projects %}
+      <div class="card mb-4">
+        {% for project in searched_projects %}
+        <img class="card-img-top" src="{{project.image.url}}" alt="{{ project.title }}">
+        <div class="card-body">
+          <h2 class="card-title">{{project.title}}</h2>
+          <a href="{% url 'project' project.id %}" style="float:right;">
+            <button type="button" class="btn btn-info">View Here</button>
+          </a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on... by...
+          <a href="#">...</a>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+      <!-- Search Widget -->
+      <div class="card mb-4">
+        <h5 class="card-header">Search</h5>
+        <div class="card-body">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- Categories Widget -->
+      <div class="card my-4">
+        <h5 class="card-header">Search Results</h5>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-12">
+              {% if searched_projects %}
+              <h5>Found {{ searched_projects|length }} projects for the searched term '{{message}}'</h5>
+              {% else %}
+              <h5> Found 0 projects for the search term '{{message}}'</h5>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
