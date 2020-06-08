@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container">
+  <div class="">
+    <h2>Add Your Project</h2>
+  </div>
+  <hr>
+  <form action="{%url 'new_projects'%}" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {% bootstrap_form form%}
+    <input type="submit" class="btn btn-dark btn-lg" value="Add Project">
+  </form>
+</div>
+<br>
+<br>
+<br>
+{% endblock %}
