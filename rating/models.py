@@ -33,3 +33,15 @@ class Project(models.Model):
         projects_title = cls.objects.filter(title__icontains=search_term)
         return sites_title
 
+class Profile(models.Model):
+    photo = models.ImageField(upload_to = 'profile/',default='default.jpg')
+    profile = models.ForeignKey(User,on_delete=models.CASCADE,null = True)
+    bio = models.TextField(max_length = 100)
+    contact = models.IntegerField()
+   
+    def save_profile(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
+
