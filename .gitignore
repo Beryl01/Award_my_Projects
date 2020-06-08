@@ -1,0 +1,14 @@
+virtual/
+*.pyc
+
+pycache/
+
+.env
+
+.vscode
+
+
+.pyre/
+migrations/
+
+templates/
