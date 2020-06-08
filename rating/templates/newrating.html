@@ -1,0 +1,31 @@
+{%extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Rate This Project
+    </h1>
+    <!-- Project One -->
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="{{project.image.url}}" alt="{{ project.title }}">
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h2 style=text-align:center;>Rate Now Here</h2>
+            <form action="{%url 'newrating' idd %}" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                {% bootstrap_form form%}
+                <input type="submit" class="btn btn-primary btn-lg" value="Rate">
+            </form>
+
+            {% block scripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            {% bootstrap_javascript %} {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
