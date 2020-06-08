@@ -45,3 +45,18 @@ class Profile(models.Model):
     def delete_profile(self):
         self.delete()
 
+class Rating(models.Model):
+  CHOICES = [(i,i) for i in range(11)]
+  design = models.IntegerField(choices=CHOICES)
+  usability = models.IntegerField(choices=CHOICES)
+  content = models.IntegerField(choices=CHOICES)
+  project = models.ForeignKey(Project, on_delete=models.CASCADE)
+  postername = models.CharField(max_length=60)
+  pub_date = models.DateTimeField(auto_now_add=True)
+
+
+  def save_rating(self):
+    self.save()
+
+  def delete_rating(self):
+    self.delete()
