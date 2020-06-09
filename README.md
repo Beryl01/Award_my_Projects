@@ -20,16 +20,20 @@ As a user of the web application you will be able to:
 
 
 ### BDD
-| Behavior            | Input                         | Output                        | 
-| ------------------- | ----------------------------- | ----------------------------- |
-| User visits the app and gets redirected to the register page  | User register | Directed to the login page | 
-If user has an account, they click on `login` | User logs in | User is redirected to the home page where can view their pictures or others photos |
-|  Home page loads | Add comment  | Comment posted appears |
-|  Homepage loads | Click `user name` | User's profile appears | 
-| Homepage loads | Click `plus sign` icon | User's redirected to a modal where they can upload an image | 
-| Profile page loads | Click `settings` icon | A modal appears where one can change their delete account or logout | 
-| Homepage loads | User inputs in the search form and presses enter | Searched results show |
-| A list of users displays | Click `follow` button to follow | Reloaded to the homepage
+|        User Requirements                 |           Input                           |           Output                         |
+|------------------------------------------|-------------------------------------------|------------------------------------------|
+| Sign Up/Login                            | To create a new account, click on the sign| If login is successful, the user is      |
+|                                          | up link and fill in the form details. To  | redirected to the home page              |
+|                                          | login, fill in the details                |                                          |
+| Add a new project                        | Click on the submit new project tab on the| You will be navigated to a page which    |
+|                                          | navbar and submit the project details     | has a form to submit the project         |
+| Review a project                         | Click on the Review button                | You will be navigated to a page where you|
+|                                          |                                           | can post your review                     |
+| Create a profile                         | Click on the profile tab then Edit Profile| A new profile for the user will be       |
+|                                          | button                                    | created                                  |
+| Search for a project                     | Enter the project's name into the search  | You will be redirected to a page with all||                                          | bar in the navbar                         | results matching your search. You can    |
+|                                          |                                           | then click on the project you want       |
+| Log out                                  | Click on the Account button and select    | You will be logged out                   ||                                          | log out                                   |                                          |
 
 ### Setup and Installation  
 To get the project .......    
