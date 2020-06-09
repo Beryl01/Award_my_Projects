@@ -17,7 +17,7 @@ As a user of the web application you will be able to:
 6. View my profile page
 
 ### Deployed link
-
+https://awardmyprojects.herokuapp.com/
 
 ### BDD
 |        User Requirements                 |           Input                           |           Output                         |
